@@ -20,17 +20,20 @@ $idevento = $datos['event_id'];
 if ($filas == 1) { //realizar actualizacion
     if (strcmp($confirmacion, $si) == 0) {
         $conn = cogerConexion();
-        $sql = "UPDATE events_users set asistencia = 'SI' where event_id = $idevento and token='$token';";
+        $sql = "UPDATE events_users set asistencia = 'SI' ,token='' where event_id = $idevento and token='$token';";
         if ($conn->query($sql) === TRUE) {
             
-        } 
+        }
         $conn->close();
     } else if (strcmp($confirmacion, $no) == 0) {
         $conn = cogerConexion();
-        $sql = "UPDATE events_users set asistencia = 'NO' where event_id =  $idevento and token='$token';";
+        $sql = "UPDATE events_users set asistencia = 'NO', token=''  where event_id =  $idevento and token='$token';";
         if ($conn->query($sql) === TRUE) {
-            
-        } 
+            echo '<h1>Operacion realizada con exito</h1>';
+            echo '<h4>En unos segundos seras redirigido a la pagina principal</h4>';
+            sleep(5);
+            header('Location: index.php');
+        }
         $conn->close();
     }
 } else {
