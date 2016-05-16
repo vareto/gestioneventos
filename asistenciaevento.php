@@ -3,7 +3,6 @@
 $confirmacion = $_GET["confirmacion"];
 $token = $_GET["token"];
 //$id = $_GET["id"];
-
 $si = sha1("si");
 $no = sha1("no");
 include_once 'conexion.php';
@@ -15,12 +14,10 @@ $filas = mysqli_num_rows($result);
 $datos = mysqli_fetch_array($result);
 $idevento = $datos['event_id'];
 
-
-
 if ($filas == 1) { //realizar actualizacion
     if (strcmp($confirmacion, $si) == 0) {
         $conn = cogerConexion();
-        $sql = "UPDATE events_users set asistencia = 'SI' ,token='' where event_id = $idevento and token='$token';";
+        $sql = "UPDATE events_users set asistencia = 'SI', token='' where event_id = $idevento and token='$token';";
         if ($conn->query($sql) === TRUE) {
             echo '<h1>Operacion realizada con exito</h1>';
             echo '<h4>En unos segundos seras redirigido a la pagina principal</h4>';
@@ -41,7 +38,5 @@ if ($filas == 1) { //realizar actualizacion
     }
 } else {
     header("location: error404.php");
-
-    //mostrar pagina de error
 }
 
