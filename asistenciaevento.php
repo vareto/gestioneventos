@@ -21,7 +21,7 @@ if ($filas == 1) { //realizar actualizacion
         if ($conn->query($sql) === TRUE) {
             echo '<h1>Operacion realizada con exito</h1>';
             echo '<h4>En unos segundos seras redirigido a la pagina principal</h4>';
-            sleep(5);
+            sleep(15);
             header('Location: index.php');
         }
         $conn->close();
@@ -31,7 +31,7 @@ if ($filas == 1) { //realizar actualizacion
         if ($conn->query($sql) === TRUE) {
             echo '<h1>Operacion realizada con exito</h1>';
             echo '<h4>En unos segundos seras redirigido a la pagina principal</h4>';
-            sleep(5);
+            sleep(15);
             header('Location: index.php');
         }
         $conn->close();
