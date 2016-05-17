@@ -109,12 +109,12 @@ function crear_invitacion($event, $user) { //crear una invitacion a un usuario a
     $array = mysqli_fetch_array(mysqli_query($conn, $sql1));
     $creador = $array['user_id'];
     $evento = $array['name'];
-    
+
     $sql2 = "select * from users where id=$creador ";
     $array1 = mysqli_fetch_array(mysqli_query($conn, $sql2));
     $nombre = $array1['name'];
-    
-    
+
+
     $si = sha1("si");
     $no = sha1("no");
     $sql = "SELECT email from users where id=$user";
@@ -343,13 +343,16 @@ function validar_descripciones_ficheros($descripciones) {
     $tot = count($_FILES["userfile"]["name"]);
     $con = 0;
 
-    for ($i = 0; $i < $tot; $i++) {
-        $descripcion = filter_var($descripciones[$i], FILTER_SANITIZE_STRING);
-        if (trim($descripcion) == '') {
-            $_SESSION['error']['evento'][] = '<p><label style="color:#FF0000;" class="control-label" for="inputError">Debe introducir la descripcion del fichero</label></p>';
-            $errors++;
+    if ($_FILES["userfile"]["error"][0] != 4 or $tot > 1) {
+        for ($i = 0; $i < $tot; $i++) {
+            $descripcion = filter_var($descripciones[$i], FILTER_SANITIZE_STRING);
+            if (trim($descripcion) == '') {
+                $_SESSION['error']['evento'][] = '<p><label style="color:#FF0000;" class="control-label" for="inputError">Debe introducir la descripcion del fichero</label></p>';
+                $errors++;
+            }
         }
     }
+
     return $errors;
 }
 

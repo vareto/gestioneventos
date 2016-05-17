@@ -410,9 +410,3 @@ if (isset($_POST['eliminarContacto'])) { //modificar a poner desabilitado
     mysqli_close($conn);
     header('location: miscontactos.php');
 }
-
-
-
-
-
-

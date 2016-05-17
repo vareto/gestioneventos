@@ -402,7 +402,7 @@ if (isset($_POST["registrar"])) {
             $mensaje .= "</body></html>";
             mail($_POST['email'], $asunto, $mensaje, $cabeceras);
 
-            header('location: login.php');
+            header('location: success.php');
         } else {
             //error existe usuario
             $_SESSION['error']['usuario'][] = '<p><label  style="color:#FF0000;" class="control-label" for="inputError">El email usado ya esta registrado</label></p>';
