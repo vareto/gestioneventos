@@ -29,10 +29,8 @@ if ($filas == 1) { //realizar actualizacion
         $conn = cogerConexion();
         $sql = "UPDATE events_users set asistencia = 'NO', token=''  where event_id =  $idevento and token='$token';";
         if ($conn->query($sql) === TRUE) {
-            echo '<h1>Operacion realizada con exito</h1>';
-            echo '<h4>En unos segundos seras redirigido a la pagina principal</h4>';
-            sleep(15);
-            header('Location: index.php');
+            
+            header('Location: success.php');
         }
         $conn->close();
     }
