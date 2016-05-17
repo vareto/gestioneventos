@@ -3,7 +3,6 @@
     <?php include_once './cabezera.php'; ?>
     <body>
         <?php
-        session_destroy();
         session_start();
         if (!isset($_SESSION['userid'])) {
             ?>
