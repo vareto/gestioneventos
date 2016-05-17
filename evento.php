@@ -143,7 +143,7 @@
                                                             echo '<td>' . $a['description'] . '</td>';
                                                             ?>
                                                         <td>
-                                                            <form action = "accionesFiles.php" method = "post">
+                                                            <form action = "accionesFiles.php" method = "post" target="_blank">
                                                                 <input type = "hidden" name = "typeFile" value = "<?= $a['typemime'] ?>">
                                                                 <input type = "hidden" name = "urlFile" value = "<?= $a['url'] ?>">
                                                                 <button type = "submit" name = "descargar" class="btn btn-default  btn-circle" data-toggle="tooltip" data-placement="bottom" title="Descargar fichero"><i class = "glyphicon glyphicon-download-alt"></i></button>
