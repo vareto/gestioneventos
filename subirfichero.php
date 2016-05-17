@@ -8,7 +8,7 @@
             return (!evt) ? event : evt;
         }
 
-//Aqui se hace lamagia... jejeje, esta funcion crea dinamicamente los nuevos campos file
+
         addCampo = function () {
             if (numero < 5) {
                 //Creamos un nuevo div para que contenga el nuevo campo
