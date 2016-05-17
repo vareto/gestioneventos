@@ -114,7 +114,6 @@ function crear_invitacion($event, $user) { //crear una invitacion a un usuario a
     $array1 = mysqli_fetch_array(mysqli_query($conn, $sql2));
     $nombre = $array1['name'];
     
-    echo $nombre ;die();
     
     $si = sha1("si");
     $no = sha1("no");
