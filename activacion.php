@@ -24,6 +24,6 @@ if ($total == 1) { // Si se ha encontrado...
     $stm->execute();
     $stm->close();
     
-    header('location: login.php');
+    header('location: success.php');
 }
 

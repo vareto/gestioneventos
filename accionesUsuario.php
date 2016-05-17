@@ -378,13 +378,30 @@ if (isset($_POST["registrar"])) {
             $stmt->execute();
             $newId = $stmt->insert_id;
             $stmt->close();
-            mail($_POST['email'], "iEvent - Activación de la cuenta", "Bienvenido a iEvent!
-        Gracias por registrarse en nuestro sitio.
+            $asunto = 'iEvent - Activación de la cuenta';
+            $cabeceras .= "MIME-Version: 1.0\r\n";
+            $cabeceras .= "Content-Type: text/html; charset=UTF-8\r\n";
+            $cabeceras .= "X-Mailer:PHP/" . phpversion() . "\n";
+            $mensaje = '<html><head>
+     </head><body>';
+            $mensaje .= "<p>Gracias por registrarse en nuestro sitio.
          Su cuenta ha sido creada, y debe ser activada antes de poder ser utilizada.
         Para activar la cuenta, haga click en el siguiente enlace o copielo en la
-        barra de direcciones del navegador,
-     
-        ievent.esy.es/activacion.php?activation=" . $random_key);
+        barra de direcciones del navegador</p> ";
+            $mensaje .= "<a class='enlaceactivacion' style='font-family: verdana, arial, sans-serif;
+                                     font-size: 15pt;
+                                     font-weight: bold;
+                                     padding: 4px;
+                                     background-color: blue;
+                                     color: white;
+                                     text-decoration: none;
+                                     border-radius: 7px 7px 7px 7px;
+                                     -moz-border-radius: 7px 7px 7px 7px;
+                                     -webkit-border-radius: 7px 7px 7px 7px;
+                                     border: 0px solid #000000;' href='ievent.esy.es/activacion.php?activation=$random_key'>ACTIVAR CUENTA</a>";
+            $mensaje .= "</body></html>";
+            mail($_POST['email'], $asunto, $mensaje, $cabeceras);
+
             header('location: login.php');
         } else {
             //error existe usuario
