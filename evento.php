@@ -18,6 +18,7 @@
                 $asistentes = traer_asistentes($_SESSION['idevento']);
                 $noAsistentes = traer_no_asistentes($_SESSION['idevento']);
                 $ficheros = traer_ficheos_eventos($_SESSION['idevento']);
+                $dueño = es_dueño($_SESSION['userid'], $_SESSION['idevento']);
                 ?>
                 <div id = "page-wrapper">
                     <div class = "container-fluid">
@@ -67,19 +68,19 @@
                                         </div>
                                     </div>
                                 </div>
+                                <?php if($dueño == true) {?>
                                 <form action = "prueba.php" method = "post">
                                     <input type = "hidden" name = "idevento" value = "<?= $evento['id'] ?>">
                                     <input type = "hidden" name = "nombreEvento" value = "<?= $evento['name'] ?>">
                                     <input type = "hidden" name = "descripcionEvento" value = "<?= $evento['description'] ?>">
-                                    <!--<button type = "submit" name = "generarWord" class="btn btn-default btn-circle" data-toggle="tooltip" data-placement="bottom" title="Generar word"><i class = "fa fa-file-o"></i></button>-->
                                     <button  type="submit" name = "generarWord" class="btn btn-primary btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="Generar word">Generar word</button>
                                 </form>
                                 <br>
                                 <form action = "accionesEventos.php" method = "post">
                                     <input type = "hidden" name = "idevento" value = "<?= $evento['id'] ?>">
-                                    <!--<button type = "submit" name = "borrarEvento" class="btn btn-default btn-circle" data-toggle="tooltip" data-placement="bottom" title="Borrar evento"><i class = "  fa fa-times"></i></button>-->
                                     <button  type="submit" name = "borrarEvento" class="btn btn-danger btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="Borrar evento">Borrar evento</button>
                                 </form>
+                                <?php } ?>
                             </div>
                             <div class="col-lg-4">
                                 <div class="panel panel-default">   
@@ -165,11 +166,13 @@
                                     <?php
                                 }
                                 ?>
+                                 <?php if($dueño == true) {?>
                                 <form action = "subirfichero.php" method = "post">
                                     <input type = "hidden" name = "idevento" value = "<?= $evento['id'] ?>">
                                     <input type = "hidden" name = "nombreEvento" value = "<?= $evento['name'] ?>">
                                     <button  type="submit" name = "subir" class="btn btn-info btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="Subir ficheros">Subir ficheros</button>
                                 </form>
+                                 <?php } ?>
                             </div>
 
 

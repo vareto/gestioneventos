@@ -214,6 +214,22 @@ function traer_no_asistentes($id) {
     return $result;
 }
 
+function es_dueño($iduser, $idevent) {
+    include_once 'conexion.php';
+    $conn = cogerConexion();
+    $sql = "SELECT user_id FROM events where id= $idevent";
+    $result = mysqli_query($conn, $sql);
+    $datos = mysqli_fetch_array($result);
+    $dueño = $datos['user_id'];
+    $retur = null;
+    if($dueño === $iduser){
+        $retur =  true;
+    }else {
+        $retur =  false;
+    } 
+    return $retur;
+}
+
 function eliminar_evento($evento) {
     include_once 'conexion.php';
     $conn = cogerConexion();
