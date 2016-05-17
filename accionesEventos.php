@@ -154,10 +154,6 @@ function crear_invitacion($event, $user) { //crear una invitacion a un usuario a
                                      border: 0px solid #000000;' href='ievent.esy.es/asistenciaevento.php?confirmacion=$no&token=$key'>RECHAZO</a>";
     $mensaje .= "</body></html>";
     mail($email, $asunto, $mensaje, $cabeceras);
-    $email = $array['email'];
-    mail($email, "iEvent - Nueva invitacion a un evento", "Tiene una nueva invitacion a un evento.
-        Recuerde que para mayor informacion debe aceder a su cuenta a traver del siguiente enlace
-        ievent.esy.es");
     $stmt->close();
 }
 
