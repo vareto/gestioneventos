@@ -28,5 +28,5 @@ if (isset($_POST['ver'])) {
     header("Content-disposition: inline; filename=".$_POST['urlFile']);
     header("Content-type:". $_POST['typeFile']);
     readfile($_POST['urlFile']);
-    header("location: ficheros.php");
+//    header("location: ficheros.php");
 }
