@@ -6,10 +6,13 @@
         session_start();
         if (!isset($_SESSION['userid'])) {
             ?>
+        
+        
             <div class="container">
                 <div class="row">
+                    
                     <div class="col-md-4 col-md-offset-4">
-                        <h1> bienvenidos a Ievents!</h1>
+                        <img src="archivos/ievent/logoievent.png" width="300" height="272">
                         <h2>TFG 2015/2016 CGG Universidad Pablo de Olavide (Sevilla)</h2>
                         <?php echo '<a href="registrar.php">Registrar</a>' ?>
                         <?php echo '<a href="recuperar.php">Recuperar credenciales</a>' ?>
