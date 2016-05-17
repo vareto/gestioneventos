@@ -17,6 +17,7 @@
                                     for ($i = 0; $i < count($_SESSION['error']['usuario']); $i++) {
                                         echo $_SESSION['error']['usuario'][$i];
                                     }
+                                    $_SESSION['error']['usuario'] = null;
                                 }
                                 ?>
                                 <fieldset>

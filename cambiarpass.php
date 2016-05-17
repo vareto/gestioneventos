@@ -24,6 +24,7 @@
                                                 for ($i = 0; $i < count($_SESSION['error']['usuario']); $i++) {
                                                     echo $_SESSION['error']['usuario'][$i];
                                                 }
+                                                $_SESSION['error']['usuario'] = null;
                                             }
                                             ?>
                                             <form role="form" id="cambiarpass" action="accionesUsuario.php" method="post">

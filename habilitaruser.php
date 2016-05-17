@@ -18,6 +18,7 @@
                                 for ($i = 0; $i < count($_SESSION['error']['usuario']); $i++) {
                                     echo $_SESSION['error']['usuario'][$i];
                                 }
+                                  $_SESSION['error']['usuario']=null;
                             }
                             ?>
                             <form role="form" action="accionesUsuario.php" method="post" id="activar">

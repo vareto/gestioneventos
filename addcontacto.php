@@ -22,6 +22,7 @@
                                             for ($i = 0; $i < count($_SESSION['error']['contacto']); $i++) {
                                                 echo $_SESSION['error']['contacto'][$i];
                                             }
+                                            $_SESSION['error']['contacto'] = null;
                                         }
                                         ?>
                                         <div class="panel-body">
@@ -31,7 +32,6 @@
                                                         <label>Email</label>
                                                         <input class="form-control" name="email" id="email"> 
                                                     </div>
-                                                    <!--<button type="submit" name="add" class="btn btn-default">Añadir</button>-->
                                                     <button  type="submit" name = "add" class="btn btn-primary btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="Añadir contacto">Añadir</button>
                                                 </fieldset>
                                             </form>    

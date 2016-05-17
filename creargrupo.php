@@ -22,6 +22,7 @@
                                             for ($i = 0; $i < count($_SESSION['error']['grupo']); $i++) {
                                                 echo $_SESSION['error']['grupo'][$i];
                                             }
+                                            $_SESSION['error']['grupo']=null;
                                         }
                                         ?>
                                         <div class="panel-body">

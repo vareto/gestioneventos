@@ -25,6 +25,7 @@
                                                 for ($i = 0; $i < count($_SESSION['error']['perfil']); $i++) {
                                                     echo $_SESSION['error']['perfil'][$i];
                                                 }
+                                                $_SESSION['error']['perfil']=null;
                                             }
                                             ?>
                                             <form role="form" id="perfil" action="accionesUsuario.php" method="post" enctype="multipart/form-data" >

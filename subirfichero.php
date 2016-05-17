@@ -97,6 +97,7 @@
                                                 for ($i = 0; $i < count($_SESSION['error']['evento']); $i++) {
                                                     echo $_SESSION['error']['evento'][$i];
                                                 }
+                                                $_SESSION['error']['evento']=null;
                                             }
                                             ?>
                                             <form role="form" action="accionesEventos.php" method="post" enctype="multipart/form-data" >
