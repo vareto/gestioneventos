@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php include_once './cabezera.php'; ?>
-
     <body>
         <?php
         session_start();

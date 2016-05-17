@@ -243,7 +243,6 @@ function eliminar_evento($evento) {
         $result = mysqli_query($conn, $porciones[$j]);
     }
 
-//    elimnar grupo
     $sql = "DELETE from events where id = $evento";
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully";

@@ -1,5 +1,4 @@
 <?php
-
 $confirmacion = $_GET["confirmacion"];
 $token = $_GET["token"];
 //$id = $_GET["id"];

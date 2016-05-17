@@ -1,8 +1,4 @@
 <?php
-
-
-
-
     function traer_mis_grupos1($id) { //traigo los grupos en los que estoy invitado y no soy dueño
         include_once 'conexion.php';
         $conn = cogerConexion();

@@ -20,7 +20,7 @@
                 $contactos = traer_mis_contactos_no_invitados($_SESSION['userid'], $_SESSION['idevento']);
                 $contactos1 = traer_mis_contactos_invitados($_SESSION['userid'], $_SESSION['idevento']);
                 $grupos = traer_mis_grupos($_SESSION['userid']);
-//                $contactos1 = traer_mis_contactos_invitados($_SESSION['userid'], $_SESSION['idevento']);
+
                 ?>
                 <div id = "page-wrapper">
                     <div class = "container-fluid">
