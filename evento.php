@@ -165,7 +165,7 @@
                                     <?php
                                 }
                                 ?>
-                                <form action = "subirFichero.php" method = "post">
+                                <form action = "subirfichero.php" method = "post">
                                     <input type = "hidden" name = "idevento" value = "<?= $evento['id'] ?>">
                                     <input type = "hidden" name = "nombreEvento" value = "<?= $evento['name'] ?>">
                                     <button  type="submit" name = "subir" class="btn btn-info btn-lg btn-block" data-toggle="tooltip" data-placement="bottom" title="Subir ficheros">Subir ficheros</button>
