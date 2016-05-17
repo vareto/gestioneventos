@@ -111,8 +111,10 @@ function crear_invitacion($event, $user) { //crear una invitacion a un usuario a
     $evento = $array['name'];
     
     $sql2 = "select * from users where id=$creador ";
-    $array1 = mysqli_fetch_array(mysqli_query($conn, $sql1));
+    $array1 = mysqli_fetch_array(mysqli_query($conn, $sql2));
     $nombre = $array1['name'];
+    
+    echo $nombre ;die();
     
     $si = sha1("si");
     $no = sha1("no");
@@ -153,10 +155,10 @@ function crear_invitacion($event, $user) { //crear una invitacion a un usuario a
                                      border: 0px solid #000000;' href='ievent.esy.es/asistenciaevento.php?confirmacion=$no&token=$key'>RECHAZO</a>";
     $mensaje .= "</body></html>";
     mail($email, $asunto, $mensaje, $cabeceras);
-//    $email = $array['email'];
-//    mail($email, "iEvent - Nueva invitacion a un evento", "Tiene una nueva invitacion a un evento.
-//        Recuerde que para mayor informacion debe aceder a su cuenta a traver del siguiente enlace
-//        ievent.esy.es");
+    $email = $array['email'];
+    mail($email, "iEvent - Nueva invitacion a un evento", "Tiene una nueva invitacion a un evento.
+        Recuerde que para mayor informacion debe aceder a su cuenta a traver del siguiente enlace
+        ievent.esy.es");
     $stmt->close();
 }
 
